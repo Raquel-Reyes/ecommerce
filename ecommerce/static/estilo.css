@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    margin: 0;
+    padding: 40px 0;
+    background-color: #f4f4f4;
+    font-family: Poppins;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+    height: 50%;
+    max-height: 500px;
+    text-align: center;
+    color: #fff;
+}
+
+form p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+form p label {
+    margin: 0;
+    white-space: nowrap;
+    font-weight: 400;
+    width: 100px;
+}
+
+form p input,
+form p textarea,
+form p select {
+    flex: 1;
+}
+
+.listado {
+    margin-top: 40px;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 40px;
+    border-bottom: 4px solid #16a085;
+}
+
+h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 24px;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 300;
+    text-align: left;
+    color: #2c3e50;
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+button {
+    background: #2c3e50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: #000000;
+}
+
+a.boton {
+    display: inline-block;
+    background-color: #085130;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    transition: background-color 0.3s;
+}
+
+a.boton:hover {
+    background-color: #2b9209;
+}
+
+@media (min-width: 768px) {
+    .contenedor {
+        display: inline-block;
+        margin: 15px;
+        vertical-align: top;
+    }
+
+    body {
+        text-align: center;
+    }
+}
