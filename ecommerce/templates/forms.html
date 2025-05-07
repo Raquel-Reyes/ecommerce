@@ -3,17 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar producto</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'estilo.css' %}">
-    <title>Nuevo producto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <form method="POST">
+
+    <div class="form-container">
         <h1>Agregar nuevo producto</h1>
-        {% csrf_token %}
-        {{ form.as_p }}
-        <a href="{% url 'home' %}" class="boton">← Regresar</a>
-        <button type="submit">Guardar</button>
-    </form>
+
+        {% if messages %}
+        <div class="alerta-exito">
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.nombre.label_tag }}
+                {{ form.nombre }}
+                {{ form.nombre.errors }}
+            </div>
+            <div class="form-group">
+                {{ form.descripcion.label_tag }}
+                {{ form.descripcion }}
+                {{ form.descripcion.errors }}
+            </div>
+            <div class="form-group">
+                {{ form.precio.label_tag }}
+                {{ form.precio }}
+                {{ form.precio.errors }}
+            </div>
+            <div class="form-actions">
+                <a href="{% url 'home' %}" class="boton">
+                    <i class="fas fa-arrow-left"></i> Regresar
+                </a>
+                <button type="submit" class="boton enviar">
+                    <i class="fas fa-save"></i> Guardar
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <footer>
+        <p>© 2025 Todos los derechos reservados · Estudiantes de la Universidad del Valle de Guatemala</p>
+    </footer>
+    
 </body>
 </html>
+

@@ -1,14 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+    <title>Catálogo de productos</title>
     {% load static %}
-<link rel="stylesheet" href="{% static 'estilo.css' %}">
+    <link rel="stylesheet" href="{% static 'estilo.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <h1>vista de productos</h1>
-    <a href="{% url 'formulario' %}" class="boton">← Regresar</a>
+
+    <header>
+        <h1>Catálogo de productos</h1>
+    </header>
+
+    <div class="listado">
+        {% for producto in productos %}
+        <div class="contenedor">
+            <h2>{{ producto.nombre }}</h2>
+            <p>{{ producto.descripcion }}</p>
+            <p><strong>Q{{ producto.precio }}</strong></p>
+            <a class="whatsapp" 
+               href="https://api.whatsapp.com/send?phone=+50249845810&text=Hola,%20me%20interesa%20el%20producto%20{{ producto.nombre }}.%20%C2%BFPodr%C3%ADas%20darme%20m%C3%A1s%20informaci%C3%B3n?" 
+               target="_blank">
+               <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="boton-centro">
+        <a href="{% url 'formulario' %}" class="boton">
+            <i class="fas fa-plus"></i> Agregar producto
+        </a>
+    </div>
+
+    <footer>
+        <p>© 2025 Todos los derechos reservados · Estudiantes de la Universidad del Valle de Guatemala</p>
+    </footer>
+    
 </body>
 </html>
+
+
