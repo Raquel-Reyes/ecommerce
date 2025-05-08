@@ -38,6 +38,11 @@
                 {{ form.precio }}
                 {{ form.precio.errors }}
             </div>
+            <div class="form-group">
+                {{ form.imagen_url.label_tag }}
+                {{ form.imagen_url }}
+                {{ form.imagen_url.errors }}
+            </div>
             <div class="form-actions">
                 <a href="{% url 'home' %}" class="boton">
                     <i class="fas fa-arrow-left"></i> Regresar

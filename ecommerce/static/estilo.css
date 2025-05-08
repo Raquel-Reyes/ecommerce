@@ -84,10 +84,11 @@ header h1 {
 }
 
 a.boton, a.whatsapp {
-    display: inline-block;
-    margin-top: 15px;
+    display: block;
+    margin: 15px auto 0;
     padding: 10px 20px;
     border-radius: 30px;
+    text-align: center;
     text-decoration: none;
     font-weight: 600;
     font-size: 14px;
@@ -258,4 +259,12 @@ footer {
     margin-top: 4px;
     list-style: none;
     padding-left: 0;
+}
+
+.producto-imagen {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }

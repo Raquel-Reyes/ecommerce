@@ -16,6 +16,7 @@ def home(request):
             'nombre': value.get('nombre'),
             'descripcion': value.get('descripcion'),
             'precio': value.get('precio'),
+            'imagen_url': value.get('imagen_url'),  # Include the image URL
         })
 
     productos.reverse()
@@ -29,6 +30,7 @@ def formulario_view(request):
                 'nombre': form.cleaned_data['nombre'],
                 'descripcion': form.cleaned_data['descripcion'],
                 'precio': float(form.cleaned_data['precio']),
+                'imagen_url': form.cleaned_data['imagen_url'],
             }
             requests.post(f'{FIREBASE_BASE_URL}.json', json=data)
             return redirect('home')

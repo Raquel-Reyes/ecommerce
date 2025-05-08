@@ -17,6 +17,7 @@
     <div class="listado">
         {% for producto in productos %}
         <div class="contenedor">
+            <img src="{{ producto.imagen_url }}" alt="{{ producto.nombre }}" class="producto-imagen">
             <h2>{{ producto.nombre }}</h2>
             <p>{{ producto.descripcion }}</p>
             <p><strong>Q{{ producto.precio }}</strong></p>
